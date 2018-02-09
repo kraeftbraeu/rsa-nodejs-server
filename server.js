@@ -33,8 +33,8 @@ http.createServer(function(request, response) {
 		}
 		else if(request.method == 'GET' && request.url == '/page')
 		{
-			// proxy html page in ../mk-jsrsa for cross site request
-			fs.readFile('../mk-jsrsa/rsa-client.htm', function(err, fileContent) {
+			// proxy html page in ../rsa-js-client for cross site request
+			fs.readFile('../rsa-js-client/rsa-client.htm', function(err, fileContent) {
 				if(err)
 					throw err;
 				response.writeHead(200, {'Content-Type': 'text/html'});
@@ -44,8 +44,8 @@ http.createServer(function(request, response) {
 		}
 		else if(request.method == 'GET' && request.url.substr(-3) === '.js')
 		{
-			// proxy js file in ../mk-jsrsa for cross site request
-			fs.readFile('../mk-jsrsa' + request.url, function(err, fileContent) {
+			// proxy js file in ../rsa-js-client for cross site request
+			fs.readFile('../rsa-js-client' + request.url, function(err, fileContent) {
 				if(err)
 					throw err;
 				response.writeHead(200, {'Content-Type': 'text/javascript'});
