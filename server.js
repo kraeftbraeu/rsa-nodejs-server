@@ -11,7 +11,7 @@ var fs = require('fs');
 var rsa = require('./rsa/rsa.js');
 var rsa2 = require('./rsa/rsa2.js');
 
-var port = 80;
+var port = 8080;
 http.createServer(function(request, response) {
 	if(request.url.search(/^[\w\/]+\.?[\w]+$/) != -1)
 	{
